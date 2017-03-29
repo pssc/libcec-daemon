@@ -14,7 +14,7 @@ Build
 * Checkout the main source
 
 ```
-git clone git://github.com/bramp/libcec-daemon.git
+git clone https://github.com/KingBonecrusher/libcec-daemon
 ```
 
 * Now we need some buildtools and libraries
@@ -24,7 +24,7 @@ sudo apt-get install build-essential autoconf
 sudo apt-get install libboost-program-options-dev libboost-thread-dev libboost-system-dev liblog4cplus-dev
 ```
 
-* Also we need the libcec (version 2.x) libraries. Pulse eight provides east way to install
+* Also we need the libcec (version 3.0.1) libraries. Pulse eight provides east way to install
 
 ```
 wget http://packages.pulse-eight.net/ubuntu/install-libcec.sh
@@ -34,12 +34,6 @@ sudo bash install-libcec.sh
 * On Ubuntu saucy and above, I had to modify install-libcec.sh. My version is found [here](https://github.com/bramp/libcec-daemon/blob/master/install-libcec.sh).
 * If you have trouble getting libcec, please refer to their documentaiton.
 * Now build the libcec-daemon
-
-*  raspbrain wheezy pacakges for libcec2 from xbmc build
-        sudo echo "deb http://archive.mene.za.net/raspbian wheezy contrib" > /etc/apt/sources.list.d/mene.list
-        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 5243CDED
-        sudo apt-get update
-        sudo apt-get install libcec-dev
 
 ```
 cd libcec-daemon

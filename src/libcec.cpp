@@ -138,10 +138,10 @@ Cec::Cec(const char * name, CecCallback * callback)
 
 	config.Clear();
 
-	config.clientVersion = CEC_CLIENT_VERSION_CURRENT;
+	config.clientVersion = LIBCEC_VERSION_CURRENT;
 
 	strncpy(config.strDeviceName, name, sizeof(config.strDeviceName));
-	config.deviceTypes.Add(CEC_DEVICE_TYPE_RECORDING_DEVICE); 
+	config.deviceTypes.Add(CEC_DEVICE_TYPE_RECORDING_DEVICE);
 
 	config.bAutodetectAddress = CEC_DEFAULT_SETTING_AUTODETECT_ADDRESS;
 	config.iPhysicalAddress = CEC_INVALID_PHYSICAL_ADDRESS;
@@ -154,11 +154,7 @@ Cec::Cec(const char * name, CecCallback * callback)
 	config.bSendInactiveSource = 0;
 	config.bPowerOffOnStandby = 0;
 	config.bShutdownOnStandby = 0;
-	config.iDoubleTapTimeoutMs = 0;
-	// since 2.2.0
-	#if LIBCEC_VERSION_CURRENT >= 0x2200
 	config.iDoubleTapTimeout50Ms = 0;
-	#endif
 
 	callbacks.CBCecLogMessage           = &::cecLogMessage;
 	callbacks.CBCecKeyPress             = &::cecKeyPress;
